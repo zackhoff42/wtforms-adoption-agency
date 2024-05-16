@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Pet</title>
+</head>
+<body>
+    <h1>Add New Pet</h1>
+
+    <form method="POST">
+        {{form.hidden_tag()}}
+
+        <div>
+            {% for field in form 
+                if field.widget.input_type != 'hidden' %}
+                {% if field.name not in ['available'] %}
+                {{field.label}}
+                {{field}}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <button>Submit</button>
+    </form>
+    <a href="/">Home</a>
+</body>
+</html>

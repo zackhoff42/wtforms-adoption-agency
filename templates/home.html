@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+    <h1>Zack's Pet Adoption Agency</h1>
+    <a class="add-get" href="/add">Add New Pet</a>
+
+    {% for pet in pets %}
+    <div>
+        <a href="/{{pet.id}}">
+        <img class="home-img" src="{{pet.photo_url}}">
+        </a>
+        <p>
+        {% if pet.available %}
+        <a href="/{{pet.id}}">{{pet.name}}</a> is available!
+        {% else %}
+        <a href="/{{pet.id}}">{{pet.name}}</a> is not available.
+        {% endif %}
+        </p>
+    </div>
+    {% endfor %}
+</body>
+</html>

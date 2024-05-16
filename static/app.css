@@ -1,0 +1,17 @@
+.details{
+    height: 50vh;
+    width: 50vw;
+}
+
+.home-img {
+    height: 30vh;
+    width: 30vw;
+}
+
+div {
+    display: inline-block;
+}
+
+.add-get{
+    display: block;
+}
